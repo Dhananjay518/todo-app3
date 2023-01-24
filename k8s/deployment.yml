@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: todo-app
+  name: todo-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - image: dhananjayk07/django-todo-app:latest
+        name: django-todo-app
+        resources: {}
+        ports:
+        - containerPort: 8000
+status: {}
